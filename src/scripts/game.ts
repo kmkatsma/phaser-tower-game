@@ -1,11 +1,8 @@
 import 'phaser'
-import MainScene from './scenes/mainScene'
-import PreloadScene from './scenes/preloadScene'
+import { DEFAULT_HEIGHT, DEFAULT_WIDTH } from './game.config'
+import TowerScene from './scenes/towerScene'
 
-const DEFAULT_WIDTH = 1280
-const DEFAULT_HEIGHT = 720
-
-const config: Phaser.Types.Core.GameConfig = {
+/*const config: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO,
   backgroundColor: '#ffffff',
   scale: {
@@ -23,6 +20,18 @@ const config: Phaser.Types.Core.GameConfig = {
       gravity: { y: 400 }
     }
   }
+}
+
+window.addEventListener('load', () => {
+  const game = new Phaser.Game(config)
+})*/
+
+var config = {
+  type: Phaser.AUTO,
+  parent: 'content',
+  width: DEFAULT_WIDTH,
+  height: DEFAULT_HEIGHT,
+  scene: [TowerScene]
 }
 
 window.addEventListener('load', () => {

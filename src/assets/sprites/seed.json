@@ -1,0 +1,55 @@
+{
+	"frames": {
+		"tiny-bad1.png": {
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 151,
+				"h": 146
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 151,
+				"h": 146
+			},
+			"sourceSize": {
+				"w": 151,
+				"h": 146
+			}
+		},
+		"tiny-bad2.png": {
+			"frame": {
+				"x": 154,
+				"y": 1,
+				"w": 133,
+				"h": 146
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 133,
+				"h": 146
+			},
+			"sourceSize": {
+				"w": 133,
+				"h": 146
+			}
+		}
+	},
+	"meta": {
+		"app": "http://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"image": "spritesheet.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 288,
+			"h": 148
+		},
+		"scale": "1"
+	}
+}
