@@ -31,7 +31,10 @@ var config = {
   parent: 'content',
   width: DEFAULT_WIDTH,
   height: DEFAULT_HEIGHT,
-  scene: [TowerScene]
+  scene: [TowerScene],
+  physics: {
+    default: 'arcade'
+  }
 }
 
 window.addEventListener('load', () => {

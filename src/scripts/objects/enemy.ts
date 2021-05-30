@@ -1,6 +1,7 @@
 export default class Enemy extends Phaser.GameObjects.Sprite {
   follower = { t: 0, vec: new Phaser.Math.Vector2() }
   path: Phaser.Curves.Path
+  hp: number
 
   ENEMY_SPEED = 1 / 10000
 
@@ -43,5 +44,15 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 
     //console.log('anims', this.anims.play())
     this.anims.play(this.animationKey)
+  }
+
+  receiveDamage(damage) {
+    this.hp -= damage
+
+    // if hp drops below 0 we deactivate this enemy
+    if (this.hp <= 0) {
+      this.setActive(false)
+      this.setVisible(false)
+    }
   }
 }
