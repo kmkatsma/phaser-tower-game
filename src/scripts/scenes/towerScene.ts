@@ -90,6 +90,12 @@ export default class TowerScene extends Phaser.Scene {
     }
   }
 
+  checkOverlap(spriteA, spriteB) {
+    var boundsA = spriteA.getBounds()
+    var boundsB = spriteB.getBounds()
+    return Phaser.Geom.Intersects.RectangleToRectangle(boundsA, boundsB)
+  }
+
   drawGrid(graphics: Phaser.GameObjects.Graphics) {
     graphics.lineStyle(1, 0x0000ff, 0.8)
     for (var i = 0; i < DEFAULT_HEIGHT / GRID_SIZE; i++) {
@@ -119,11 +125,19 @@ export default class TowerScene extends Phaser.Scene {
     // only if both enemy and bullet are alive
     if (enemy.active === true && bullet.active === true) {
       // we remove the bullet right away
+
+      //this.time.delayedCall(
+      //  100,
+      //  function (bullet) {
       bullet.setActive(false)
       bullet.setVisible(false)
+      enemy.receiveDamage(BULLET_DAMAGE)
+      //  },
+      //  [],
+      //  this
+      // )
 
       // decrease the enemy hp with BULLET_DAMAGE
-      enemy.receiveDamage(BULLET_DAMAGE)
     }
   }
 

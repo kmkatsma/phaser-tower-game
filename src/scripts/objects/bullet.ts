@@ -1,4 +1,4 @@
-export default class Bullet extends Phaser.GameObjects.Image {
+export default class Bullet extends Phaser.GameObjects.Sprite {
   dx = 0
   dy = 0
   lifespan = 0
@@ -7,11 +7,14 @@ export default class Bullet extends Phaser.GameObjects.Image {
   constructor(scene) {
     super(scene, 0, 0, 'bullet')
     this.speed = Phaser.Math.GetSpeed(600, 1)
+    this.displayHeight = 20
+    this.displayWidth = 20
   }
 
   fire(x, y, angle) {
     this.setActive(true)
     this.setVisible(true)
+    this.anims.play('bullet-move')
 
     //  Bullets fire from the middle of the screen to the given x/y
     this.setPosition(x, y)
